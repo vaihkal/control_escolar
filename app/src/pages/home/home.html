@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sistema de Control Escolar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let materia of materias" (click)="openList(materia)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://yahya-gilany.gallerycdn.vsassets.io/extensions/yahya-gilany/vscode-clock/1.0.1/1497509730699/Microsoft.VisualStudio.Services.Icons.Default">
+      </ion-avatar>
+      <h2>{{materia.name}}</h2>
+      <p>{{materia.schedule}}</p>
+      <p>{{materia.teacher}}</p>
+      <p><span style="color:green">{{materia.asistencias}}</span> / <span style="color:red">{{materia.faltas}}</span></p>
+    </ion-item>
+  </ion-card>
+</ion-content>
